@@ -35,14 +35,42 @@
 - how to check content of the file without going inside the file `cat file_name`
 
 - how to move a file `move file.txt from current location to sre folder`
+- how to delete folder `sudo rm -rf folder_name`
+  
+### File permisions 
+- how to check a file permision `ll`
+- change file permision `chmod required_permision file_name`
+- write `w` read `r` exe `x`
+- https://chmod-calculator.com/
 
 
 
 
-
+### Bash scripting - Automate process with the script
 
 - code block
 ```bash
+# create a file called provision.sh
 
+# it must start with #!/bin/bash
+#!/bin/bash
+
+# run updates
+sudo apt-get update -y
+# run upgrades
+sudo apt-get upgrade -y
+
+# install nginx
+sudo apt-get install nginx -y      
+
+# ensure it's running - start nginx
+sudo systemctl start nginx
+
+# enable nginx
+sudo systemctl enable nginx
 
 ```
+
+- change the file to exe `chmod +x provision.sh`
+- how to run an exe file `./provision.sh`
+
